@@ -43,8 +43,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/bienvenida"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                app:layout_constraintStart_ToStartOf="@+id/linearLayout" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
         </com.google.android.material.circularreveal.CircularRevealLinearLayout>
 

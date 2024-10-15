@@ -2,4 +2,9 @@
     <string name="app_name">t3a3-Tortosa-Pau</string>
     <string name="bienvenida">Bienvenido/a\n</string>
     <string name="inicio">Iniciar sesión</string>
+    <string name="introduceUsuario">Introduce al usuario</string>
+    <string name="obligatorio">Obligatorio</string>
+    <string name="introduceContrasena">Introduce la contraseña</string>
+    <string name="entrar">Entrar</string>
+    <string name="salir">Salir</string>
 </resources>
