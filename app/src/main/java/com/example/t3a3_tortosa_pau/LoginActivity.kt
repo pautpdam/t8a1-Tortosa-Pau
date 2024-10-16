@@ -18,9 +18,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnEntrar.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("Usuario", binding.editUsuario.text.toString())
-            startActivity(intent)
+            val usuario = binding.editUsuario.text.toString()
+            val contrasena = binding.editContrasena.text.toString()
+
+            if (usuario.isEmpty() || contrasena.isEmpty()) {
+                binding.textoError.text = "Error: Debe introducir todos los parámetros."
+            } else {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("Usuario", binding.editUsuario.text.toString())
+                startActivity(intent)
+            }
         }
 
         super.onCreate(savedInstanceState)

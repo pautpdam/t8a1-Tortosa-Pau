@@ -19,39 +19,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcvUsuario"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textUsuario"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="48dp"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@+id/textoInicioSesion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoInicioSesion">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textUsuario"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            app:layout_constraintBottom_toBottomOf="@+id/mcvUsuario"
-            app:layout_constraintEnd_toEndOf="@+id/mcvUsuario"
-            app:layout_constraintStart_toStartOf="@+id/mcvUsuario"
-            app:layout_constraintTop_toTopOf="@+id/mcvUsuario" />
+        app:layout_constraintStart_toStartOf="parent" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editUsuario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:hint="@string/introduceUsuario"
             android:maxLength="21" />
 
-    </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textoObligacion1"
@@ -60,44 +47,29 @@
         android:layout_marginStart="24dp"
         android:text="@string/obligatorio"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        app:layout_constraintStart_toStartOf="@+id/mcvUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/mcvUsuario" />
+        app:layout_constraintStart_toStartOf="@+id/textUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textUsuario" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcvContrasena"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textContrasena"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:ems="10"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoObligacion1" >
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textContrasena"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            app:endIconMode="password_toggle"
-            app:layout_constraintBottom_toBottomOf="@+id/mcvContrasena"
-            app:layout_constraintEnd_toEndOf="@+id/mcvContrasena"
-            app:layout_constraintStart_toStartOf="@+id/mcvContrasena"
-            app:layout_constraintTop_toTopOf="@+id/mcvContrasena" />
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/textoObligacion1"
+        app:layout_constraintEnd_toEndOf="@+id/textUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textUsuario" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editContrasena"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:inputType="textPassword"
             android:hint="@string/introduceContrasena"
-            android:maxLength="21"
-            app:endIconMode="password_toggle" />
+            android:maxLength="21" />
 
-    </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textoObligacion2"
@@ -106,8 +78,8 @@
         android:layout_marginStart="24dp"
         android:text="@string/obligatorio"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        app:layout_constraintStart_toStartOf="@+id/mcvContrasena"
-        app:layout_constraintTop_toBottomOf="@+id/mcvContrasena" />
+        app:layout_constraintStart_toStartOf="@+id/textContrasena"
+        app:layout_constraintTop_toBottomOf="@+id/textContrasena" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEntrar"
@@ -115,8 +87,8 @@
         android:layout_height="wrap_content"
         android:text="@string/entrar"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintStart_toStartOf="@+id/mcvContrasena"
+        android:layout_marginTop="112dp"
+        app:layout_constraintStart_toStartOf="@+id/textContrasena"
         app:layout_constraintEnd_toStartOf="@+id/btnSalir"
         app:layout_constraintTop_toBottomOf="@+id/textoObligacion2" />
 
@@ -128,7 +100,20 @@
         android:layout_marginStart="24dp"
         android:onClick="QuitApp"
         app:layout_constraintStart_toEndOf="@+id/btnEntrar"
-        app:layout_constraintEnd_toEndOf="@+id/mcvContrasena"
+        app:layout_constraintEnd_toEndOf="@+id/textContrasena"
         app:layout_constraintTop_toTopOf="@+id/btnEntrar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textoError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text=""
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintStart_toStartOf="@+id/btnEntrar"
+        app:layout_constraintEnd_toEndOf="@+id/btnSalir"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
