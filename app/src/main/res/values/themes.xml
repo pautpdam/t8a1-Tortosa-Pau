@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.T3a3TortosaPau" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.T4a2TortosaPau" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorSecondary">@color/lightPurple</item>
+        <item name="colorError">@color/red</item>
     </style>
 
-    <style name="Theme.T3a3TortosaPau" parent="Base.Theme.T3a3TortosaPau" />
+    <style name="Theme.T4a2TortosaPau" parent="Base.Theme.T4a2TortosaPau" />
 </resources>

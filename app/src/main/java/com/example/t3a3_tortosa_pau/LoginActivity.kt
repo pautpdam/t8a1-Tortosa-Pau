@@ -20,14 +20,23 @@ class LoginActivity : AppCompatActivity() {
         binding.btnEntrar.setOnClickListener {
             val usuario = binding.editUsuario.text.toString()
             val contrasena = binding.editContrasena.text.toString()
+            val comprobador = binding.textoInicioSesion.text
 
             if (usuario.isEmpty() || contrasena.isEmpty()) {
-                binding.textoError.text = "Error: Debe introducir todos los parámetros."
+                if (comprobador.equals("Log in")) {
+                    binding.textoError.text = "Error: You must enter all the parameters."
+                } else {
+                    binding.textoError.text = "Error: Debe introducir todos los parámetros."
+                }
             } else {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("Usuario", binding.editUsuario.text.toString())
                 startActivity(intent)
             }
+        }
+
+        binding.btnSalir.setOnClickListener {
+            finishAffinity()
         }
 
         super.onCreate(savedInstanceState)

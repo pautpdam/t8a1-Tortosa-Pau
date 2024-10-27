@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Pau Bank</string>
+    <string name="bienvenida">Bienvenido/a\n</string>
+    <string name="inicio">Iniciar sesión</string>
+    <string name="introduceUsuario">Introduce al usuario</string>
+    <string name="obligatorio">Obligatorio</string>
+    <string name="introduceContrasena">Introduce la contraseña</string>
+    <string name="entrar">Entrar</string>
+    <string name="salir">Salir</string>
+    <string name="welcome_bank">Bienvenido/a a mi banco</string>
+    <string name="entrarBanco">ENTRAR</string>
+    <string name="globalPosition">POSICIÓN GLOBAL</string>
+    <string name="movimientos">MOVIMIENTOS</string>
+    <string name="transferencia">TRANSFERENCIAS</string>
+    <string name="changePassword">CAMBIAR CONTRASEÑA</string>
+    <string name="promotions">PROMOCIONES</string>
+    <string name="cajeros">CAJEROS</string>
+    <string name="exitBank">SALIR</string>
+    <string name="buttonDescription">Un botón que no hace nada</string>
+</resources>
