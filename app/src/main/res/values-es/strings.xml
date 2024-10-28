@@ -17,4 +17,5 @@
     <string name="cajeros">CAJEROS</string>
     <string name="exitBank">SALIR</string>
     <string name="buttonDescription">Un botón que no hace nada</string>
+    <string name="transfers">Transferencias</string>
 </resources>
