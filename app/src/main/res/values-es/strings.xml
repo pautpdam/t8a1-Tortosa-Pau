@@ -18,4 +18,8 @@
     <string name="exitBank">SALIR</string>
     <string name="buttonDescription">Un botón que no hace nada</string>
     <string name="transfers">Transferencias</string>
+    <string name="chooseAccount">Elige tu cuenta:</string>
+    <string name="ownAccount">Cuenta propia</string>
+    <string name="someoneAccount">Cuenta ajena</string>
+    <string name="amount">Cantidad:</string>
 </resources>

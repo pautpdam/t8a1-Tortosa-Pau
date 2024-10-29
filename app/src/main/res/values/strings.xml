@@ -18,4 +18,8 @@
     <string name="exitBank">EXIT</string>
     <string name="buttonDescription">A button that does nothing</string>
     <string name="transfers">Transfers</string>
+    <string name="chooseAccount">Choose your account:</string>
+    <string name="ownAccount">Own account</string>
+    <string name="someoneAccount">Someone\'s account</string>
+    <string name="amount">Amount:</string>
 </resources>
