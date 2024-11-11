@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.t3a3_tortosa_pau"
+    namespace = "com.example.t5a3_tortosa_pau"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.t3a3_tortosa_pau"
+        applicationId = "com.example.t5a3_tortosa_pau"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

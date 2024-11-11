@@ -1,4 +1,4 @@
-package com.example.t3a3_tortosa_pau
+package com.example.t5a3_tortosa_pau
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.t3a3_tortosa_pau.databinding.ActivityLoginBinding
+import com.example.t5a3_tortosa_pau.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 

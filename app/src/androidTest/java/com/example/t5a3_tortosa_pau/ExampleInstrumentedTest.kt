@@ -1,4 +1,4 @@
-package com.example.t3a3_tortosa_pau
+package com.example.t5a3_tortosa_pau
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

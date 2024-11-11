@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_mod_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.T4a2TortosaPau"
+        android:theme="@style/Theme.T5a3TortosaPau"
         tools:targetApi="31">
         <activity
             android:name=".TransferActivity"

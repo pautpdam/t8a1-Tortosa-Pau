@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "t3a3-Tortosa-Pau"
+rootProject.name = "t5a3-Tortosa-Pau"
 include(":app")
  
