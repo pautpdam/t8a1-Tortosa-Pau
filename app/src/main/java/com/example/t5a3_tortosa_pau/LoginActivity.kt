@@ -2,11 +2,15 @@ package com.example.t5a3_tortosa_pau
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.t5a3_tortosa_pau.bd.MiBancoOperacional
 import com.example.t5a3_tortosa_pau.databinding.ActivityLoginBinding
+import com.example.t5a3_tortosa_pau.pojo.Cliente
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,9 +33,21 @@ class LoginActivity : AppCompatActivity() {
                     binding.textoError.text = "Error: Debe introducir todos los parámetros."
                 }
             } else {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("Usuario", binding.editUsuario.text.toString())
-                startActivity(intent)
+                val bancoOperacional: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
+
+                var cliente = Cliente()
+                cliente.setNif(usuario)
+                cliente.setClaveSeguridad(contrasena)
+
+                val clienteLogeado = bancoOperacional?.login(cliente) ?: -1
+
+                if(clienteLogeado == -1) {
+                    Toast.makeText(this, "El cliente y/o contraseña no existen.", Toast.LENGTH_LONG).show()
+                } else {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("Cliente", clienteLogeado)
+                    startActivity(intent)
+                }
             }
         }
 

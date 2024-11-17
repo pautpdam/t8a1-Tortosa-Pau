@@ -8,7 +8,7 @@
     tools:context=".TransferActivity">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/txtBienvenidaBanco"
+        android:id="@+id/txtTransfers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -19,25 +19,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/txtEligeCuenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="24dp"
-        android:text="@string/chooseAccount"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/grey"
-        app:layout_constraintTop_toBottomOf="@+id/txtBienvenidaBanco"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="24dp"
-        app:layout_constraintTop_toBottomOf="@id/txtEligeCuenta">
+        app:layout_constraintTop_toBottomOf="@id/txtTransfers">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtEligeCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/chooseAccount"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/txtTransfers"
+        app:layout_constraintStart_toStartOf="parent" />
         <Spinner
             android:id="@+id/spCuentaEnviar"
             android:layout_width="match_parent"
@@ -48,23 +46,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="24dp">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/btnCuentaPropia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ownAccount" />
+                android:layout_marginStart="40dp"
+                android:text="@string/ownAccount"
+                android:checked="true" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/btnCuentaAjena"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/someoneAccount" />
 
-        </LinearLayout>
+        </RadioGroup>
 
         <Spinner
             android:id="@+id/spCuentaRecibir"
@@ -73,9 +75,24 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="24dp"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputCuentaAjena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:hint="@string/writeAccount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,7 +110,56 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtBienvenidaBanco"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputCantidad"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/txtCantidad"
+                />
+
+            <Spinner
+                android:id="@+id/spDivisas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/txtInputCantidad" />
+
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbJustificante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sendJustification"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="100dp"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEnviarTransferencia"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:layout_marginEnd="62dp"
+            android:backgroundTint="@color/purpleBlue"
+            app:cornerRadius="5dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelarTransferencia"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"
+            android:backgroundTint="@color/red"
+            app:cornerRadius="5dp" />
+
+    </LinearLayout>
 
     </LinearLayout>
 

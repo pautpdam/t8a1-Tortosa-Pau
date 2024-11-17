@@ -22,4 +22,28 @@
     <string name="ownAccount">Cuenta propia</string>
     <string name="someoneAccount">Cuenta ajena</string>
     <string name="amount">Cantidad:</string>
+    <string name="writeAccount">Escribe el núm. cuenta ajena</string>
+    <string name="sendJustification">Enviar justificante</string>
+    <string name="send">Enviar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="movimientosTitulo">Movimientos</string>
+    <string name="seleccionaCuenta">Selecciona la cuenta:</string>
+    <string name="ultimosMovimientos">Últimos movimientos:</string>
+    <string name="movementImageDescription">Imagen recibo</string>
+    <string name="movementText">Recibo 1</string>
+    <string name="movementDate">02-01-2024 Importe -73.47</string>
+    <string name="saldo">1000.0</string>
+    <string name="cuenta">1001-1001-11-1000000001</string>
+    <string name="posicionGlobal">Posicion Global</string>
+    <string name="cuentasTotales">Cuentas:</string>
+    <string name="cambioContrasena">Cambiar Contraseña</string>
+    <string name="introduceContrasenaActual">Introduce tu contraseña actual</string>
+    <string name="introduceContrasenaNueva">Introduce tu nueva contraseña</string>
+    <string name="cambiar">Cambiar</string>
+
+    <string-array name="divisas">
+        <item name="euros">€</item>
+        <item name="dolares">$</item>
+        <item name="libras">£</item>
+    </string-array>
 </resources>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.t5a3_tortosa_pau.databinding.ActivityMainBinding
+import com.example.t5a3_tortosa_pau.pojo.Cliente
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,11 +18,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val usuarioRecibido = intent.getStringExtra("Usuario")
-        binding.textoBienvenida.text = binding.textoBienvenida.text.toString() + usuarioRecibido
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
+        val nombreCliente = cliente.getNombre()
+        val apellidosCliente = cliente.getApellidos()
+        binding.textoBienvenida.text = binding.textoBienvenida.text.toString() + nombreCliente + " " + apellidosCliente
 
         binding.btnChangePassword.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, ChangePasswordActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnGlobalPosition.setOnClickListener {
+            val intent = Intent(this, GlobalPositionActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnMovements.setOnClickListener {
+            val intent = Intent(this, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnTransfers.setOnClickListener {
+            val intent = Intent(this, TransferActivity::class.java)
+            intent.putExtra("Cliente", cliente)
             startActivity(intent)
         }
 
