@@ -1,4 +1,4 @@
-package com.example.t5a3_tortosa_pau
+package com.example.t5a3_tortosa_pau.activities
 
 import android.os.Bundle
 import android.view.View
@@ -10,11 +10,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.t5a3_tortosa_pau.R
 import com.example.t5a3_tortosa_pau.bd.MiBancoOperacional
 import com.example.t5a3_tortosa_pau.databinding.ActivityTransferBinding
 import com.example.t5a3_tortosa_pau.pojo.Cliente
 import com.example.t5a3_tortosa_pau.pojo.Cuenta
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -45,7 +45,9 @@ class TransferActivity : AppCompatActivity() {
         }
 
         val adapterCuentas = ArrayAdapter(this, android.R.layout.simple_spinner_item, numeroCuentas)
-        val adapterDivisas = ArrayAdapter(this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.divisas))
+        val adapterDivisas = ArrayAdapter(this, android.R.layout.simple_spinner_item, resources.getStringArray(
+            R.array.divisas
+        ))
 
         adapterCuentas.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapterDivisas.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

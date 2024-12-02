@@ -1,4 +1,4 @@
-package com.example.t5a3_tortosa_pau
+package com.example.t5a3_tortosa_pau.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.t5a3_tortosa_pau.R
 import com.example.t5a3_tortosa_pau.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovementsActivity"
+    tools:context=".activities.MovementsActivity"
     android:layout_margin="12dp">
 
     <com.google.android.material.textview.MaterialTextView

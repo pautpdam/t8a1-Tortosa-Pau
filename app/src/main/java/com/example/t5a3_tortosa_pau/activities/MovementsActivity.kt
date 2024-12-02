@@ -1,16 +1,14 @@
-package com.example.t5a3_tortosa_pau
+package com.example.t5a3_tortosa_pau.activities
 
 import android.os.Bundle
-import android.webkit.WebViewClient
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.t5a3_tortosa_pau.R
+import com.example.t5a3_tortosa_pau.adapters.MovementsAdapter
 import com.example.t5a3_tortosa_pau.bd.MiBancoOperacional
 import com.example.t5a3_tortosa_pau.databinding.ActivityMovementsBinding
 import com.example.t5a3_tortosa_pau.pojo.Cliente

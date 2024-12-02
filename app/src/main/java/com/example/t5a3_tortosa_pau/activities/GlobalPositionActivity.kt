@@ -1,9 +1,10 @@
-package com.example.t5a3_tortosa_pau
+package com.example.t5a3_tortosa_pau.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.t5a3_tortosa_pau.adapters.GlobalPositionAdapter
 import com.example.t5a3_tortosa_pau.bd.MiBancoOperacional
 import com.example.t5a3_tortosa_pau.databinding.ActivityGlobalPositionBinding
 import com.example.t5a3_tortosa_pau.pojo.Cliente

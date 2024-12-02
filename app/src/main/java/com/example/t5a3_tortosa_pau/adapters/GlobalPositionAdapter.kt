@@ -1,4 +1,4 @@
-package com.example.t5a3_tortosa_pau
+package com.example.t5a3_tortosa_pau.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.t5a3_tortosa_pau.R
 import com.example.t5a3_tortosa_pau.databinding.ItemCuentasBinding
 import com.example.t5a3_tortosa_pau.pojo.Cuenta
 
