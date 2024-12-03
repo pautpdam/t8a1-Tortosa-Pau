@@ -4,24 +4,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tituloDetalle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detalleMovimiento"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp" />
-
     <ImageView
         android:id="@+id/imgDetalle"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_foreground"
         android:background="@drawable/ic_launcher_background"
-        app:layout_constraintTop_toBottomOf="@+id/tituloDetalle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp" />
@@ -30,7 +19,7 @@
         android:id="@+id/txtDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tituloDetalle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgDetalle"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp" />

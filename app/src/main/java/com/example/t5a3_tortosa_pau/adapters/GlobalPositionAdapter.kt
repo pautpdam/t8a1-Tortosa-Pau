@@ -1,6 +1,7 @@
 package com.example.t5a3_tortosa_pau.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import com.example.t5a3_tortosa_pau.R
 import com.example.t5a3_tortosa_pau.databinding.ItemCuentasBinding
 import com.example.t5a3_tortosa_pau.pojo.Cuenta
 
-class GlobalPositionAdapter(private val cuentas: List<Cuenta>): RecyclerView.Adapter<GlobalPositionAdapter.ViewHolder>() {
+class GlobalPositionAdapter(private val cuentas: List<Cuenta>, private val listener: CuentasListener): RecyclerView.Adapter<GlobalPositionAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val binding = ItemCuentasBinding.bind(view)
@@ -36,6 +37,10 @@ class GlobalPositionAdapter(private val cuentas: List<Cuenta>): RecyclerView.Ada
                     ContextCompat.getColor(context, R.color.red)
                 }
             )
+
+            binding.root.setOnClickListener {
+                listener.onCuentaSeleccionada(cuenta)
+            }
         }
     }
 

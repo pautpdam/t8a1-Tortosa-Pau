@@ -31,21 +31,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPG"
-        android:name="com.example.t5a3_tortosa_pau.fragments.GlobalPositionFragment"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        tools:layout="@layout/fragment_global_position" />
+        android:layout_weight="1"
+        tools:listitem="@layout/item_cuentas" />
 
 </LinearLayout >
-
-
-<!-- <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
