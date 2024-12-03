@@ -54,6 +54,8 @@ class GlobalPositionActivity : AppCompatActivity(), CuentasListener {
                 transaction.replace(R.id.fragmentMovimientos, movimientoFragment)
                 transaction.commit()
             } else {
+                // Llamar a la otra activity
+                // intent pasandole cuenta
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.fragmentPosicionesGlobales, movimientoFragment)
                 transaction.addToBackStack(null)

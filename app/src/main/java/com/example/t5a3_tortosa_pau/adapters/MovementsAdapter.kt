@@ -12,10 +12,16 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class MovementsAdapter(private val movimientos: List<Movimiento>): RecyclerView.Adapter<MovementsAdapter.ViewHolder>() {
+class MovementsAdapter(private val movimientos: List<Movimiento>, private val listener: MovimientoListener): RecyclerView.Adapter<MovementsAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val binding = ItemMovementsBinding.bind(view)
+
+        fun setListener(mov: Movimiento) {
+            binding.root.setOnClickListener {
+                listener.onMovimientoSeleccionada(mov)
+            }
+        }
     }
 
     private lateinit var context: Context
@@ -28,21 +34,14 @@ class MovementsAdapter(private val movimientos: List<Movimiento>): RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movimiento = movimientos.get(position)
+
         with(holder) {
-            val fecha = movimiento.getFechaOperacion().toString()
-            val date = Date(fecha)
-            val fechaFormateada = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-            val fechaFinal = fechaFormateada.format(date)
+            setListener(movimiento)
 
             binding.txtMovementName.text = movimiento.getDescripcion()
-            binding.txtMovementInfo.text = fechaFinal + " Importe: " + movimiento.getImporte()
-            if (movimiento.getImporte() > 0) {
-                binding.txtMovementInfo.resources.getColor(R.color.green)
-            }
-            binding.imgMovement.setImageResource(R.drawable.cerdito)
+        //    binding.txtMovementInfo.text = movimiento.getFechaOperacion() + movimiento.getImporte()
         }
     }
 
     override fun getItemCount(): Int = movimientos.size
-
 }

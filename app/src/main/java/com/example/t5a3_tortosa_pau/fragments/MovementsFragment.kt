@@ -5,55 +5,61 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.t5a3_tortosa_pau.R
+import com.example.t5a3_tortosa_pau.adapters.MovementsAdapter
+import com.example.t5a3_tortosa_pau.bd.MiBancoOperacional
+import com.example.t5a3_tortosa_pau.databinding.FragmentMovementsBinding
+import com.example.t5a3_tortosa_pau.pojo.Cuenta
+import com.example.t5a3_tortosa_pau.pojo.Movimiento
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val CUENTA = "cuenta"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MovementsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MovementsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var movementsAdapter: MovementsAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var itemDecoration: DividerItemDecoration
+    private lateinit var binding: FragmentMovementsBinding
+    private var movimientos: List<Movimiento> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movements, container, false)
+
+        binding = FragmentMovementsBinding.inflate(inflater, container, false)
+
+        val cuenta = arguments?.getSerializable("cuentaSeleccionada") as? Cuenta
+        cuenta?.let {
+            movimientos = getMovimientos(cuenta) as List<Movimiento>
+        }
+
+        movementsAdapter = MovementsAdapter(movimientos)
+        linearLayoutManager = LinearLayoutManager(context)
+        itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+
+        binding.recyclerViewM.apply{
+            layoutManager = linearLayoutManager
+            adapter = movementsAdapter
+            addItemDecoration(itemDecoration)
+        }
+
+        return binding.root
+    }
+
+    fun getMovimientos(cuenta: Cuenta): ArrayList<*>? {
+        val bancoOperacional = MiBancoOperacional.getInstance(context)
+        val cuentasCliente = bancoOperacional?.getMovimientos(cuenta)
+        return cuentasCliente
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MovementsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(c: Cuenta) =
             MovementsFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putSerializable(CUENTA, c)
                 }
             }
     }

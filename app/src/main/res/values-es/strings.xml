@@ -40,6 +40,7 @@
     <string name="introduceContrasenaActual">Introduce tu contraseña actual</string>
     <string name="introduceContrasenaNueva">Introduce tu nueva contraseña</string>
     <string name="cambiar">Cambiar</string>
+    <string name="detalleMovimiento">Detalle del movimiento</string>
 
     <string-array name="divisas">
         <item name="euros">€</item>

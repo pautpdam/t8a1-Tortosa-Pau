@@ -40,12 +40,11 @@
     <string name="introduceContrasenaActual">Enter your actual password</string>
     <string name="introduceContrasenaNueva">Enter your new password</string>
     <string name="cambiar">Change</string>
+    <string name="detalleMovimiento">Movement\'s detail</string>
 
     <string-array name="divisas">
         <item name="euros">€</item>
         <item name="dolares">$</item>
         <item name="libras">£</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
