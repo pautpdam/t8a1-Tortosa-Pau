@@ -1,159 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:fitsSystemWindows="true"
     tools:context=".activities.MainActivity">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="16dp">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mcvBienvenida"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.circularreveal.CircularRevealLinearLayout
-                android:id="@+id/linearLayout"
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/fotoUsuario"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/photo" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/textoBienvenida"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/bienvenida"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
-
-            </com.google.android.material.circularreveal.CircularRevealLinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mcvOpciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp">
+                    android:background="@color/purple"
+                    app:titleTextColor="@android:color/white" />
+            </com.google.android.material.appbar.AppBarLayout>
 
             <LinearLayout
-                android:id="@+id/lyButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="8dp">
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/appBar">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnGlobalPosition"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvBienvenida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/globalPosition"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_position"
-                    app:cornerRadius="10dp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMovements"
+                    <com.google.android.material.circularreveal.CircularRevealLinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/fotoUsuario"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/photo" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textoBienvenida"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/bienvenida"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                    </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvOpciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/movimientos"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_movements"
-                    app:cornerRadius="10dp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnTransfers"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/transferencia"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_transfer"
-                    app:cornerRadius="10dp" />
+                    <LinearLayout
+                        android:id="@+id/lyButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="8dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnChangePassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/changePassword"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_password"
-                    app:cornerRadius="10dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnGlobalPosition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/globalPosition"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_position"
+                            app:cornerRadius="10dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnPromotions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/promotions"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_promotions"
-                    app:cornerRadius="10dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnMovements"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/movimientos"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_movements"
+                            app:cornerRadius="10dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCashiers"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cajeros"
-                    android:layout_marginBottom="8dp"
-                    app:icon="@drawable/icon_banks"
-                    app:cornerRadius="10dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnTransfers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/transferencia"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_transfer"
+                            app:cornerRadius="10dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnExit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/exitBank"
-                    app:icon="@drawable/icon_exit"
-                    app:cornerRadius="10dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnChangePassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/changePassword"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_password"
+                            app:cornerRadius="10dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPromotions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/promotions"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_promotions"
+                            app:cornerRadius="10dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCashiers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cajeros"
+                            android:layout_marginBottom="8dp"
+                            app:icon="@drawable/icon_banks"
+                            app:cornerRadius="10dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnExit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exitBank"
+                            app:icon="@drawable/icon_exit"
+                            app:cornerRadius="10dp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:fitsSystemWindows="true"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_bank"
+            app:layout_anchor="@+id/bottomMenu" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:navigationIcon="@drawable/icon_menu"
-        app:navigationIconTint="@color/black"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonMenu"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_bank"
-        app:layout_anchor="@+id/bottomMenu" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

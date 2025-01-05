@@ -41,6 +41,15 @@
     <string name="introduceContrasenaNueva">Introduce tu nueva contraseña</string>
     <string name="cambiar">Cambiar</string>
     <string name="detalleMovimiento">Detalle del movimiento</string>
+    <string name="home">Menu</string>
+    <string name="bank">Mi Banco</string>
+    <string name="bankContact">contact@mibanco.com</string>
+    <string name="promotionsText">Promociones</string>
+    <string name="cashiers">Cajeros</string>
+    <string name="configuration">Configuración</string>
+    <string name="logout">Logout</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
 
     <string-array name="divisas">
         <item name="euros">€</item>
