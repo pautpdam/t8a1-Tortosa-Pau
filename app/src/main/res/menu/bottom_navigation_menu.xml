@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_no_type"
+        android:title="@string/no_type"
+        android:icon="@drawable/icon_no_type" />
+    <item
+        android:id="@+id/item_type_0"
+        android:title="@string/type_0"
+        android:icon="@drawable/icon_type_0" />
+    <item
+        android:id="@+id/item_type_1"
+        android:title="@string/type_1"
+        android:icon="@drawable/icon_type_1" />
+    <item
+        android:id="@+id/item_type_2"
+        android:title="@string/type_2"
+        android:icon="@drawable/icon_type_2" />
+
+</menu>

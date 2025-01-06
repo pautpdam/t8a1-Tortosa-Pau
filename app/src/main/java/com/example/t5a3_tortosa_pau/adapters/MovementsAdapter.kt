@@ -10,7 +10,7 @@ import com.example.t5a3_tortosa_pau.databinding.ItemMovementsBinding
 import com.example.t5a3_tortosa_pau.pojo.Movimiento
 
 class MovementsAdapter(
-    private val movimientos: List<Movimiento>,
+    var movimientos: List<Movimiento>,
     private val listener: OnMovementClickListener
 ) : RecyclerView.Adapter<MovementsAdapter.ViewHolder>() {
 

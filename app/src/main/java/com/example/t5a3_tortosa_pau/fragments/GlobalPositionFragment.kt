@@ -16,7 +16,7 @@ import com.example.t5a3_tortosa_pau.databinding.FragmentGlobalPositionBinding
 import com.example.t5a3_tortosa_pau.pojo.Cliente
 import com.example.t5a3_tortosa_pau.pojo.Cuenta
 
-class GlobalPositionFragment : Fragment(), CuentasListener {
+class GlobalPositionFragment : Fragment() {
 
     private lateinit var globalPositionAdapter: GlobalPositionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
@@ -55,16 +55,6 @@ class GlobalPositionFragment : Fragment(), CuentasListener {
     private fun getCuentas(cliente: Cliente): List<Cuenta> {
         val bancoOperacional = MiBancoOperacional.getInstance(context)
         return bancoOperacional?.getCuentas(cliente) as List<Cuenta>
-    }
-
-    override fun onCuentaSeleccionada(cuenta: Cuenta) {
-        val movementsFragment = MovementsFragment.newInstance(cuenta)
-
-        activity?.supportFragmentManager?.beginTransaction()?.apply {
-            replace(R.id.fragmentPosicionesGlobales, movementsFragment)
-            addToBackStack(null)
-            commit()
-        }
     }
 
     companion object {

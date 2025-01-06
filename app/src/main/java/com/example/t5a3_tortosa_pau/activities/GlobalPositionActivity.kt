@@ -49,14 +49,14 @@ class GlobalPositionActivity : AppCompatActivity(), CuentasListener {
         if (cuenta != null) {
             var hayCuenta = supportFragmentManager.findFragmentById(R.id.fragmentMovimientos) != null
 
-            val movimientoFragment = MovementsFragment.newInstance(cuenta)
+            val movimientoFragment = MovementsFragment.newInstance(cuenta, -1)
 
             val bundle = Bundle()
             bundle.putSerializable("cuentaSeleccionada", cuenta)
             movimientoFragment.arguments = bundle
 
             if (hayCuenta) {
-                val movimientoFragment = MovementsFragment.newInstance(cuenta)
+                val movimientoFragment = MovementsFragment.newInstance(cuenta, -1)
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentMovimientos, movimientoFragment)
                     .commit()

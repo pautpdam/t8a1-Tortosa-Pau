@@ -27,6 +27,7 @@ class MovementsFragment : Fragment(), MovimientoListener {
     private lateinit var itemDecoration: DividerItemDecoration
     private lateinit var binding: FragmentMovementsBinding
     private var movimientos: List<Movimiento> = emptyList()
+    private var cuenta: Cuenta? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +35,21 @@ class MovementsFragment : Fragment(), MovimientoListener {
     ): View? {
         binding = FragmentMovementsBinding.inflate(inflater, container, false)
 
-        val cuenta = arguments?.getSerializable("cuentaSeleccionada") as? Cuenta
-        cuenta?.let {
-            movimientos = getMovimientos(cuenta) as List<Movimiento>
+        cuenta = arguments?.getSerializable("cuentaSeleccionada") as? Cuenta
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.item_no_type -> refreshMovements(-1)
+                R.id.item_type_0 -> refreshMovements(0)
+                R.id.item_type_1 -> refreshMovements(1)
+                R.id.item_type_2 -> refreshMovements(2)
+            }
+            true
         }
+
+        val tipo = arguments?.getSerializable("tipo") as? Int ?: -1
+
+        movimientos = cuenta?.let { getMovimientos(it, tipo) } as List<Movimiento>
 
         movementsAdapter = MovementsAdapter(movimientos, object : MovementsAdapter.OnMovementClickListener {
             override fun onMovementClick(movimiento: Movimiento) {
@@ -75,21 +87,40 @@ class MovementsFragment : Fragment(), MovimientoListener {
         return binding.root
     }
 
-    fun getMovimientos(cuenta: Cuenta): ArrayList<*>? {
+    private fun refreshMovements(tipo: Int) {
+        cuenta?.let {
+            movimientos = getMovimientos(it, tipo) as List<Movimiento>
+            movementsAdapter.updateMovimientos(movimientos)
+        }
+    }
+
+    fun getMovimientos(cuenta: Cuenta, tipo: Int): ArrayList<*>? {
         val bancoOperacional = MiBancoOperacional.getInstance(context)
-        val cuentasCliente = bancoOperacional?.getMovimientos(cuenta)
-        return cuentasCliente
+        val movimientosCliente: ArrayList<*>?
+        if (tipo in 0..2) {
+            movimientosCliente = bancoOperacional?.getMovimientosTipo(cuenta, tipo)
+        } else {
+            movimientosCliente = bancoOperacional?.getMovimientos(cuenta)
+        }
+        return movimientosCliente
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(c: Cuenta) =
+        fun newInstance(c: Cuenta, tipo: Int) =
             MovementsFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable("cuentaSeleccionada", c)
+                    putSerializable("tipo", tipo)
                 }
             }
     }
 
     override fun onMovimientoSeleccionada(mov: Movimiento) { }
+
+    private fun MovementsAdapter.updateMovimientos(newMovimientos: List<Movimiento>) {
+        this.movimientos = newMovimientos
+        this.notifyDataSetChanged()
+    }
+
 }
