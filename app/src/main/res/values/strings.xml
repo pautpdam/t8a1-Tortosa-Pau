@@ -54,10 +54,41 @@
     <string name="type_0">Type 0</string>
     <string name="type_1">Type 1</string>
     <string name="type_2">Type 2</string>
+    <string name="conf_multimedia">Media</string>
+    <string name="conf_idioma">Language</string>
+    <string name="conf_datos">Data</string>
+    <string name="conf_musica">Music</string>
+    <string name="conf_video">Welcome video</string>
+    <string name="conf_idioma_app">App language</string>
+    <string name="conf_origen_datos">Data origin</string>
+    <string name="conf_musica_off">Don\'t listen to music while the application is running</string>
+    <string name="conf_musica_on">Listen to music while the application is running</string>
+    <string name="conf_video_off">Don\'t play a video when starting the app</string>
+    <string name="conf_video_on">Play a video when starting the app</string>
 
     <string-array name="divisas">
         <item name="euros">€</item>
         <item name="dolares">$</item>
         <item name="libras">£</item>
+    </string-array>
+
+    <string-array name="idioma">
+        <item name="espanyol">Spanish</item>
+        <item name="ingles">English</item>
+    </string-array>
+
+    <string-array name="codigo_idioma">
+        <item name="espanyol">ESP</item>
+        <item name="ingles">ENG</item>
+    </string-array>
+
+    <string-array name="datos">
+        <item name="local">Local data</item>
+        <item name="web">Web data</item>
+    </string-array>
+
+    <string-array name="codigo_datos">
+        <item name="local">LOCAL</item>
+        <item name="web">WEB</item>
     </string-array>
 </resources>

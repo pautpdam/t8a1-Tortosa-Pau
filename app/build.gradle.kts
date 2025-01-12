@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.preference:preference:1.2.0")
     implementation(libs.material)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

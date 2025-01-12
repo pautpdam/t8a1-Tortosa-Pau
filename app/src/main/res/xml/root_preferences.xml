@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="@string/conf_multimedia"
+        app:icon="@drawable/ic_media">
+
+        <SwitchPreferenceCompat
+            app:key="reproducirMusica"
+            app:summaryOff="@string/conf_musica_off"
+            app:summaryOn="@string/conf_musica_on"
+            app:title="@string/conf_musica" />
+
+        <SwitchPreferenceCompat
+            app:key="reproducirVideo"
+            app:summaryOff="@string/conf_video_off"
+            app:summaryOn="@string/conf_video_on"
+            app:title="@string/conf_video" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/conf_idioma"
+        app:icon="@drawable/ic_language">
+
+        <ListPreference
+            app:key="idioma"
+            app:title="@string/conf_idioma_app"
+            app:useSimpleSummaryProvider="true"
+            app:dialogTitle="Indicar País donde vives"
+            app:entries="@array/idioma"
+            app:entryValues="@array/codigo_idioma" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/conf_datos"
+        app:icon="@drawable/ic_data">
+
+        <ListPreference
+            app:key="datos"
+            app:title="@string/conf_origen_datos"
+            app:useSimpleSummaryProvider="true"
+            app:dialogTitle="Indicar País donde vives"
+            app:entries="@array/idioma"
+            app:entryValues="@array/codigo_idioma" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
